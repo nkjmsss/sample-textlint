@@ -1,0 +1,16 @@
+{
+  "name": "sample-textlint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "textlint -f pretty-error docs/",
+    "lintfix": "textlint --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "textlint": "^11.0.1",
+    "textlint-rule-prh": "^5.2.0"
+  }
+}

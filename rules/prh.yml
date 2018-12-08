@@ -1,0 +1,5 @@
+# prh version
+version: 1
+imports:
+  # スペース周りの設定
+  - ./spacing.yml

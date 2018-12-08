@@ -1,0 +1,16 @@
+# prh version
+version: 1
+rules:
+  # 感嘆符の後には全角スペース（半角ではなく）
+  - expected: $1　$2
+    patterns: /([！？]) ?((?!　|$).*)/
+    specs:
+      - from: 感嘆符！の後には全角スペース
+        to: 感嘆符！　の後には全角スペース
+
+  # 文章中のスペースを消す（ひらがな・カタカナ・漢字の間のもの）
+  - expected: $1$2
+    patterns: /([\u3041-\u3096]|[\u30A1-\u30FA]|[々〇〻\u3400-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F][\uDC00-\uDFFF])[ 　]([\u3041-\u3096]|[\u30A1-\u30FA]|[々〇〻\u3400-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F][\uDC00-\uDFFF])/
+    specs:
+      - from: 文章中の スペースはダメ
+        to: 文章中のスペースはダメ
